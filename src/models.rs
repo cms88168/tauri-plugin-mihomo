@@ -533,6 +533,14 @@ pub enum ProxyType {
     Fallback,
     URLTest,
     LoadBalance,
+
+    // Private/extended outbound types from forks of mihomo (e.g. cmcc, trusttunnel).
+    Cmcc,
+    TrustTunnel,
+
+    // Fallback for any future / unknown variant so deserialization never fails.
+    #[serde(other)]
+    Unknown,
 }
 
 #[derive(Debug, Serialize, Deserialize, TS, PartialEq, Eq)]
